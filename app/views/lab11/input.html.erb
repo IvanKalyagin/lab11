@@ -1,0 +1,23 @@
+<div>
+    <h1>Лабораторная работа 11</h1>
+</div>
+<div>
+    <%= form_with url: '/lab11/show', method: :get do |form|%>
+        <p><%= form.label 'Введите число:' %></p>
+            <%= form.text_field(:number)%> <br/><br/>
+        <%= form.submit('Ввести', class: "btn btn-primary") %>
+    <% end %>
+</div>
+<br>
+<div>
+    <% flash.each do |type, msg| %>
+        <%= msg %>
+    <% end %>
+</div>
+<div>
+    <% @counters.each do |counter| %>
+        <%= counter.input %>
+        <%= counter.output %>
+        <br>
+    <% end %>
+</div>
